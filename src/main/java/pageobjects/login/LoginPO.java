@@ -32,6 +32,14 @@ public class LoginPO extends BasePageObject {
     }
 
     public void clickOn_Login_Button() {
-        clickToElement(login_Button);
+        waitForWebElementAndClick(login_Button);
+    }
+
+    public void validate_SuccessfulLogin_Message() {
+        waitForAlertAndValidateTxt("validation succeeded");
+    }
+
+    public void validate_UnsuccessfulLogin_Message() {
+        waitForAlertAndValidateTxt("validation failed");
     }
 }
