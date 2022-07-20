@@ -3,6 +3,7 @@ package pageobjects.login;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pageobjects.BasePageObject;
+import utils.GlobalVariables;
 
 public class LoginPO extends BasePageObject {
 
@@ -20,7 +21,7 @@ public class LoginPO extends BasePageObject {
     }
 
     public void navigateTo_WebDriverUniversity_Login_Page() {
-        navigateTo_URL("https://www.webdriveruniversity.com/Login-Portal/index.html?");
+        navigateTo_URL(GlobalVariables.BASE_LOCAL_URL + "/Login-Portal/index.html?");
     }
 
     public void setUsername(String username) {

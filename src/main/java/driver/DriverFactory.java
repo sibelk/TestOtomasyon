@@ -4,6 +4,7 @@ import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import utils.GlobalVariables;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,13 +29,13 @@ public class DriverFactory {
 
 
         switch (getBrowserType()) {
-            case "chrome" -> {
-                System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/src/main/java/driver/drivers/chromedriver.exe");
+            case "chrome":
+                System.setProperty("webdriver.chrome.driver", GlobalVariables.CHROME_DRIVER_PATH);
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.setPageLoadStrategy(PageLoadStrategy.NORMAL);
                 driver = new ChromeDriver(chromeOptions);
                 break;
-            }
+
         }
         driver.manage().window().maximize();
         return driver;

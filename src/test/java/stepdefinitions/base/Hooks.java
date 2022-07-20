@@ -14,14 +14,14 @@ import static driver.DriverFactory.getDriver;
 
 public class Hooks {
 
-    @Before
+    @Before()
     public void setup() {
         getDriver();
     }
 
     @AfterStep
     public void captureExceptionImage(Scenario scenario) {
-        //hata alınan stepte ekran görüntüsü alır
+        //takes screenshot when a step fails
         if (scenario.isFailed()) {
             Timestamp timestamp = new Timestamp(System.currentTimeMillis());
             String timeMilliseconds = Long.toString(timestamp.getTime());
